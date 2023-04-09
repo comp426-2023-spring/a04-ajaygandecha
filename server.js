@@ -40,3 +40,46 @@ app.get("/app/rpsls", (_, res) => {
     res.send(JSON.stringify(rpsls.rpslsDefault()));
 })
 
+
+/**
+ * /app/rps/play/ route - JSON input
+ */
+app.put("/app/rps/play", (req, res) => {
+    res.send(JSON.stringify(rpsls.rps(req.body["shot"])));
+})
+
+/**
+ * /app/rps/play/ route - Query input
+ */
+app.get("/app/rps/play", (req, res) => {
+    res.send(JSON.stringify(rpsls.rps(req.query["shot"])));
+})
+
+/**
+ * /app/rps/play/ route - Direct URL input
+ */
+app.get("/app/rps/play/:shot", (req, res) => {
+    res.send(JSON.stringify(rpsls.rps(req.params["shot"])));
+})
+
+
+/**
+ * /app/rpsls/play/ route - JSON input
+ */
+app.put("/app/rpsls/play", (req, res) => {
+    res.send(JSON.stringify(rpsls.rpsls(req.body["shot"])));
+})
+
+/**
+ * /app/rpsls/play/ route - Query input
+ */
+app.get("/app/rpsls/play", (req, res) => {
+    res.send(JSON.stringify(rpsls.rpsls(req.query["shot"])));
+})
+
+/**
+ * /app/rpsls/play/ route - Direct URL input
+ */
+app.get("/app/rpsls/play/:shot", (req, res) => {
+    res.send(JSON.stringify(rpsls.rpsls(req.params["shot"])));
+})

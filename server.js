@@ -83,3 +83,10 @@ app.get("/app/rpsls/play", (req, res) => {
 app.get("/app/rpsls/play/:shot", (req, res) => {
     res.send(JSON.stringify(rpsls.rpsls(req.params["shot"])));
 })
+
+/**
+ * Undefined endpoints
+ */
+app.get("*", (_, res) => {
+    res.send("404 NOT FOUND");
+})

@@ -44,7 +44,7 @@ app.get("/app/rpsls", (_, res) => {
 /**
  * /app/rps/play/ route - JSON input
  */
-app.put("/app/rps/play", (req, res) => {
+app.get("/app/rps/play", (req, res) => {
     res.send(JSON.stringify(rpsls.rps(req.body["shot"])));
 })
 
@@ -66,7 +66,7 @@ app.get("/app/rps/play/:shot", (req, res) => {
 /**
  * /app/rpsls/play/ route - JSON input
  */
-app.put("/app/rpsls/play", (req, res) => {
+app.get("/app/rpsls/play", (req, res) => {
     res.send(JSON.stringify(rpsls.rpsls(req.body["shot"])));
 })
 
